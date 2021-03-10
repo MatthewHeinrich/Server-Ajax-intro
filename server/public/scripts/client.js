@@ -1,6 +1,9 @@
 $( document ).ready(onReady);
 
 function onReady(){
+    // click handlers
+    $('#sendMessageButton').on( 'click', sendMessage );
+    // initialization 
     getMessages();
 } // end onReady
 
@@ -22,3 +25,18 @@ function getMessages(){
     
     
 } // end getMessages
+
+
+function sendMessage(){
+    // get user input & place it in an object
+    let objectToSend = {
+        author: $( '#nameIn' ).val(),
+        body: $( '#messageIn' ).val()
+    }
+    console.log('sending message:', objectToSend );
+    // send the object to the server via AJAZ POST
+    // if successful, update the DOM
+    // catch any errors
+    // empty the messageIn element
+    $('#messageIn').val( '' );
+} // end sendMessage
