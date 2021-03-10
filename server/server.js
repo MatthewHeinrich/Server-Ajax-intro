@@ -22,3 +22,8 @@ app.get( '/messages', ( req, res )=>{
     console.log( '/messages get' );
     res.send( messages );
 }) // end messages get 
+
+app.post( '/messages', ( req, res )=>{
+    console.log( '/messages post' );
+    res.send( 'woof' );
+})
