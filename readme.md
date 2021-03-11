@@ -1,8 +1,9 @@
 
 
 Stage 1: Setup
+---
 
--git init
+- git init
 - npm init --y
 - npm install express
 - set up folders (server, server/public, ect...)

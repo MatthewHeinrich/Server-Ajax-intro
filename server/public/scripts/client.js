@@ -16,6 +16,14 @@ function getMessages(){
     }).then( function( response ){
         // if successful, show on the DOM
         console.log( 'back from server with:', response );
+        // target ul & empty
+        let el = $('#messagesOut')
+        el.empty();
+        // loop through response
+        for (i=0; i<response.length; i++){
+            el.append( `<li>${response[i].author}: ${response[i].body}`)
+        }
+        // append each to ul
     }).catch( function( err ){
         // catch any errors
         // display errors in the console
@@ -42,6 +50,7 @@ function sendMessage(){
     }).then( function ( response ){
         // if successful, update the DOM
         console.log( 'back from POST:', response )
+        getMessages();
     }).catch( function ( err ){
         // catch any errors
         alert( 'error creating message' );
